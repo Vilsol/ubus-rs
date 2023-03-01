@@ -4,7 +4,7 @@ use std::path::{PathBuf};
 fn main() {
     println!("cargo:rustc-link-search=native=/usr/local/lib");
     println!("cargo:rustc-link-lib=ubus");
-    println!("cargo:rustc-link-lib=ubox");
+    println!("cargo:rustc-link-lib=blobmsg_json");
 
     let bindings = bindgen::Builder::default()
         .header("/usr/local/include/libubus.h")
