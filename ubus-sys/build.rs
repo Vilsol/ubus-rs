@@ -2,6 +2,9 @@ use std::env;
 use std::path::{PathBuf};
 
 fn main() {
+    println!("cargo:rustc-link-search=native=/usr/local/lib");
+    println!("cargo:rustc-link-lib=ubus");
+
     let bindings = bindgen::Builder::default()
         .header("/usr/local/include/libubus.h")
         .header("/usr/local/include/libubox/blobmsg_json.h")
