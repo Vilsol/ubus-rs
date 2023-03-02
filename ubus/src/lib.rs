@@ -11,7 +11,7 @@ pub struct Context {
 }
 
 fn path_to_pointer(path: &Path) -> *const ::std::os::raw::c_char {
-    path.as_os_str().to_string_lossy().as_bytes().as_ptr() as *const _
+    CString::new(path.as_os_str().to_string_lossy().to_string()).unwrap().into_raw()
 }
 
 impl Context {
